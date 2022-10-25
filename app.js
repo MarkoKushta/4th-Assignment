@@ -17,6 +17,9 @@
 
             if(screen.value.includes(".") && screen.value.endsWith(".")){
                 document.querySelector('.btn-dot').disabled = true;
+                document.querySelectorAll('.btn-grey').forEach(elem => {
+                    elem.disabled = false;
+                })
             }
 
             if(screen.value.endsWith("+") || screen.value.endsWith("-") 
@@ -33,7 +36,7 @@
     });
 
     equal.addEventListener('click', function(e){
-        
+        document.querySelector('.btn-dot').disabled = false;
         if(screen.value === ''){
             screen.value = "";
         } 
